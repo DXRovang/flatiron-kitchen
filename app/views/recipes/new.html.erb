@@ -1,0 +1,14 @@
+<h1>Recipes#new</h1>
+
+<%= form_for @recipe do |form| %>
+
+<%= form.label :name %>
+<%= form.text_field :name %>
+
+<% Ingredient.all.each do |ingredient| %>
+<% binding.pry %>
+<%= form.check_box ingredient.name %>
+<% end %>
+
+<%= form.submit %>
+<% end %>
