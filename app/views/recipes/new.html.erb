@@ -6,7 +6,7 @@
 <%= form.text_field :name %>
 
 <div>
-<%= collection_check_boxes(:recipe, :ingredient_ids, Ingredient.all, :id, :name) %>
+<%= form.collection_check_boxes(:recipe, :ingredient_ids, Ingredient.all, :id, :name) %>
 </div>
 
 <%= form.submit %>
