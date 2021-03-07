@@ -5,10 +5,9 @@
 <%= form.label :name %>
 <%= form.text_field :name %>
 
-<% Ingredient.all.each do |ingredient| %>
-<% binding.pry %>
-<%= form.check_box ingredient.name %>
-<% end %>
+<div>
+<%= collection_check_boxes(:recipe, :ingredient_ids, Ingredient.all, :id, :name) %>
+</div>
 
 <%= form.submit %>
 <% end %>
